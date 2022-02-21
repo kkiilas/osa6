@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = null
+let timeoutID
 
 const notificationSlice = createSlice({
   name: 'notification',
-  initialState,
+  initialState: null,
   reducers: {
     startNotification(state, action) {
       return action.payload
@@ -19,8 +19,9 @@ export const { clearNotification, startNotification } = notificationSlice.action
 
 export const setNotification = (notification, duration) => {
   return dispatch => {
+    clearTimeout(timeoutID)
     dispatch(startNotification(notification))
-    setTimeout(() => {
+    timeoutID = setTimeout(() => {
       dispatch(clearNotification())
     }, duration * 1000)
   }
