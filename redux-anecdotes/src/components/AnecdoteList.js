@@ -4,8 +4,12 @@ import { voteFor } from '../reducers/anecdoteReducer'
 import { setNotification } from '../reducers/notificationReducer'
 
 const Anecdote = ({ anecdote, handleClick }) => {
+  const margin = {
+    marginBottom: 5
+  }
+
   return (
-    <div style={{ marginBottom: 5 }}>
+    <div style={margin}>
       <div>
         {anecdote.content}
       </div>
