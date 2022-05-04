@@ -6,7 +6,6 @@ import Filter from './components/Filter'
 import Notification from './components/Notification'
 import { initializeAnecdotes } from './reducers/anecdoteReducer'
 
-
 const App = () => {
   const dispatch = useDispatch()
 
@@ -15,7 +14,7 @@ const App = () => {
   }, [dispatch])
 
   return (
-    <div className='container text-light'>
+    <div className="container text-light">
       <Notification />
       <h2>Anecdotes</h2>
       <Filter />
